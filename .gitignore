@@ -50,3 +50,4 @@ wp-config.php
 #
 # Note: If you wish to whitelist themes,
 # uncomment the ne!/wp-content/plugins/jetpack/
+/wp-content/mu-plugins/woocommerce-analytics-proxy-speed-module.php
