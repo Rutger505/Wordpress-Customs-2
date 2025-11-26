@@ -1,0 +1,76 @@
+.nasa-apod-container {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.nasa-apod-title {
+    color: #0B3D91;
+    margin-top: 0;
+}
+
+.nasa-apod-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.nasa-apod-media {
+    margin: 20px auto;
+}
+
+.nasa-apod-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nasa-apod-video,
+.nasa-apod-iframe {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 4px;
+}
+
+.nasa-apod-hd-link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nasa-apod-hd-link a {
+    background: #0B3D91;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.nasa-apod-hd-link a:hover {
+    background: #062554;
+}
+
+.nasa-apod-explanation {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+.nasa-apod-explanation h3 {
+    color: #0B3D91;
+}
+
+.nasa-apod-copyright {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+.nasa-apod-error {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #f5c6cb;
+}
