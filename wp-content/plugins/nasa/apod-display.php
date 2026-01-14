@@ -36,7 +36,6 @@ function nasa_apod_display($data, $atts) {
             <?php elseif ($data['media_type'] === 'video'): ?>
                 <div class="nasa-apod-video">
                     <iframe src="<?php echo esc_url($data['url']); ?>"
-                            frameborder="0"
                             allowfullscreen
                             class="nasa-apod-iframe"></iframe>
                 </div>
