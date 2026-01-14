@@ -1,3 +1,3 @@
-# Wordpress Customs 1
+# WordPress Customs 2
 
-First period of subject wordpress: Building a custom theme
+Second period of subject WordPress: Building a custom plugin
