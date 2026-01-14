@@ -1,28 +1,28 @@
 .nasa-apod-container {
     margin: 20px 0;
-    padding: 20px;
-    background: #f9f9f9;
-    border-radius: 8px;
+    padding: var(--wp--preset--spacing--40, 20px);
+    background: var(--wp--preset--color--base, #f9f9f9);
+    border-radius: var(--wp--custom--border-radius, 8px);
 }
 
 .nasa-apod-title {
-    color: #0B3D91;
+    color: var(--wp--preset--color--primary, currentColor);
     margin-top: 0;
 }
 
 .nasa-apod-date {
-    color: #666;
-    font-size: 14px;
+    color: var(--wp--preset--color--contrast-2, #666);
+    font-size: var(--wp--preset--font-size--small, 0.875em);
 }
 
 .nasa-apod-media {
-    margin: 20px auto;
+    margin: var(--wp--preset--spacing--40, 20px) auto;
 }
 
 .nasa-apod-image {
     width: 100%;
     height: auto;
-    border-radius: 4px;
+    border-radius: var(--wp--custom--border-radius, 4px);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
@@ -30,47 +30,48 @@
 .nasa-apod-iframe {
     width: 100%;
     aspect-ratio: 16/9;
-    border-radius: 4px;
+    border-radius: var(--wp--custom--border-radius, 4px);
 }
 
 .nasa-apod-hd-link {
     text-align: center;
-    margin-top: 10px;
+    margin-top: var(--wp--preset--spacing--30, 10px);
 }
 
 .nasa-apod-hd-link a {
-    background: #0B3D91;
-    color: white;
-    padding: 8px 16px;
+    background: var(--wp--preset--color--primary, #0B3D91);
+    color: var(--wp--preset--color--contrast, white);
+    padding: var(--wp--preset--spacing--20, 8px) var(--wp--preset--spacing--30, 16px);
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: var(--wp--custom--border-radius, 4px);
     display: inline-block;
+    transition: opacity 0.2s;
 }
 
 .nasa-apod-hd-link a:hover {
-    background: #062554;
+    opacity: 0.8;
 }
 
 .nasa-apod-explanation {
-    margin-top: 20px;
+    margin-top: var(--wp--preset--spacing--40, 20px);
     line-height: 1.6;
 }
 
 .nasa-apod-explanation h3 {
-    color: #0B3D91;
+    color: var(--wp--preset--color--primary, currentColor);
 }
 
 .nasa-apod-copyright {
-    font-size: 12px;
-    color: #666;
+    font-size: var(--wp--preset--font-size--small, 0.75em);
+    color: var(--wp--preset--color--contrast-2, #666);
     font-style: italic;
-    margin-top: 15px;
+    margin-top: var(--wp--preset--spacing--30, 15px);
 }
 
 .nasa-apod-error {
-    background: #f8d7da;
-    color: #721c24;
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #f5c6cb;
+    background: var(--wp--preset--color--custom-error-background, #f8d7da);
+    color: var(--wp--preset--color--custom-error-text, #721c24);
+    padding: var(--wp--preset--spacing--30, 12px);
+    border-radius: var(--wp--custom--border-radius, 4px);
+    border: 1px solid var(--wp--preset--color--custom-error-border, #f5c6cb);
 }
