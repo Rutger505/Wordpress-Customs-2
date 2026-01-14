@@ -15,10 +15,27 @@ function nasa_apod_settings_page() {
             <table class="form-table">
                 <tr>
                     <th scope="row">
-                        <label for="nasa_apod_api_key">NASA API Key</label>
+                        <label for="nasa_apod_api_url">API Base URL</label>
                     </th>
                     <td>
                         <input type="text"
+                               id="nasa_apod_api_url"
+                               name="nasa_apod_api_url"
+                               value="<?php echo esc_attr(get_option('nasa_apod_api_url', 'https://api.nasa.gov')); ?>"
+                               class="regular-text">
+                        <p class="description">
+                            Base URL for the NASA API. Use this field to configure a proxy server if needed.
+                            <br>Default: <code>https://api.nasa.gov</code>
+                            <br>The API path (<code>/planetary/apod</code>) will be automatically appended to this URL.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="nasa_apod_api_key">NASA API Key</label>
+                    </th>
+                    <td>
+                        <input type="password"
                                id="nasa_apod_api_key"
                                name="nasa_apod_api_key"
                                value="<?php echo esc_attr(get_option('nasa_apod_api_key', 'DEMO_KEY')); ?>"

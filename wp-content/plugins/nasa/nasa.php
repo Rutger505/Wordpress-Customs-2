@@ -14,7 +14,8 @@ require_once plugin_dir_path(__FILE__) . 'settings.php';
 require_once plugin_dir_path(__FILE__) . 'apod-display.php';
 
 class NASA_APOD_Plugin {
-    private $api_url = 'https://api.nasa.gov/planetary/apod';
+    private $api_base_url = 'https://api.nasa.gov';
+    private $api_path = '/planetary/apod';
     private $api_key = 'DEMO_KEY';
 
     public function __construct() {
@@ -25,19 +26,20 @@ class NASA_APOD_Plugin {
     }
 
     public function fetch_apod_data($date = null) {
-        $transient_key = 'nasa_apod_' . ($date ? $date : date('Y-m-d'));
+        $transient_key = 'nasa_apod_' . ($date ?: date('Y-m-d'));
 
         $cached_data = get_transient($transient_key);
         if ($cached_data !== false) {
             return $cached_data;
         }
 
+        $api_base_url = get_option('nasa_apod_api_url', $this->api_base_url);
         $api_key = get_option('nasa_apod_api_key', $this->api_key);
 
         $url = add_query_arg(array(
             'api_key' => $api_key,
             'date' => $date
-        ), $this->api_url);
+        ), rtrim($api_base_url, '/') . $this->api_path);
 
         $response = wp_remote_get($url);
 
@@ -92,6 +94,7 @@ class NASA_APOD_Plugin {
     }
 
     public function register_settings() {
+        register_setting('nasa_apod_settings', 'nasa_apod_api_url');
         register_setting('nasa_apod_settings', 'nasa_apod_api_key');
     }
 }
