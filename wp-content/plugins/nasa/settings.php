@@ -46,6 +46,24 @@ function nasa_apod_settings_page() {
                         </p>
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row">
+                        <label for="nasa_apod_cache_duration">Cache Duration (hours)</label>
+                    </th>
+                    <td>
+                        <input type="number"
+                               id="nasa_apod_cache_duration"
+                               name="nasa_apod_cache_duration"
+                               value="<?php echo esc_attr(get_option('nasa_apod_cache_duration', '12')); ?>"
+                               min="1"
+                               max="168"
+                               class="small-text">
+                        <p class="description">
+                            How long to cache API responses (1-168 hours). Default: 12 hours.
+                            <br>Higher values reduce API calls but may show outdated data.
+                        </p>
+                    </td>
+                </tr>
             </table>
 
             <?php submit_button(); ?>

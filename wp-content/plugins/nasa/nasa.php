@@ -35,6 +35,7 @@ class NASA_APOD_Plugin {
 
         $api_base_url = get_option('nasa_apod_api_url', $this->api_base_url);
         $api_key = get_option('nasa_apod_api_key', $this->api_key);
+        $cache_duration = get_option('nasa_apod_cache_duration', 12);
 
         $url = add_query_arg(array(
             'api_key' => $api_key,
@@ -54,7 +55,7 @@ class NASA_APOD_Plugin {
             return array('error' => $data['error']['message']);
         }
 
-        set_transient($transient_key, $data, 12 * HOUR_IN_SECONDS);
+        set_transient($transient_key, $data, intval($cache_duration) * HOUR_IN_SECONDS);
 
         return $data;
     }
@@ -96,6 +97,14 @@ class NASA_APOD_Plugin {
     public function register_settings() {
         register_setting('nasa_apod_settings', 'nasa_apod_api_url');
         register_setting('nasa_apod_settings', 'nasa_apod_api_key');
+        register_setting('nasa_apod_settings', 'nasa_apod_cache_duration', array(
+            'type' => 'integer',
+            'default' => 12,
+            'sanitize_callback' => function($value) {
+                $value = intval($value);
+                return max(1, min(168, $value));
+            }
+        ));
     }
 }
 
